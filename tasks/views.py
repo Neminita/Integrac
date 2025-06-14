@@ -35,5 +35,3 @@ def home(request):
 
 def base(request):
     return render(request, 'base.html',)
-
-
