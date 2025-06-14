@@ -22,10 +22,9 @@
             
             <form method="POST">
 
-            
+                {% csrf_token %}
                 
                 <h3>Registro de Usuario</h3>
-                {% csrf_token %}
                 <label for="id_username">Nombre de Usuario:</label><br>
                 <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username"><br><br>
                 <label for="id_password1">Contraseña:</label><br>
