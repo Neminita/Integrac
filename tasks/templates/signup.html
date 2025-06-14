@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+</head>
+<body>
+
+    <div class="card">
+
+        <div class="card-body">
+            <h1>Registro</h1>
+            
+            <form method="POST">
+
+            
+                
+                <h3>Registro de Usuario</h3>
+                {% csrf_token %}
+                <label for="id_username">Nombre de Usuario:</label><br>
+                <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username"><br><br>
+                <label for="id_password1">Contraseña:</label><br>
+                <input type="password" name="password1" required="" id="id_password1"><br><br>
+                <label for="id_password2">Confirmar Contraseña:</label><br>
+                <input type="password" name="password2" required="" id="id_password2"><br><br>
+                <button type="submit">Registrar</button>
+            </form><br>
+                <a class="nav-link active" href="">Iniciar sesión con cuenta existente.</a>
+                {{error}}
+
+            </form>
+     
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+{% endblock %}
