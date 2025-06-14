@@ -9,8 +9,8 @@ h2{
 .carousel {
     align-items: center;
     width: 100%;
-    max-width: 98%;
-    margin: 20px auto;
+    max-width: 100%;
+    margin: 3px auto;
     overflow: hidden;
     position: relative;
     
@@ -54,4 +54,9 @@ h2{
 
 .carousel-item {
     position: relative;
+}
+
+.img-fluid {
+    margin: 0%;
+    width: 300%;
 }
