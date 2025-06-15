@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+</head>
+<body>
+
+    <div class="card">
+
+        <div class="card-body">
+            <h1></h1>
+
+            {{error}}
+            <form action="/signin/" method="POST">
+
+                {% csrf_token %}
+                
+                <h3>Inicio de Sesión</h3>
+                
+                {{form.as_p}}
+
+                <button type="submit">Ingresar</button>
+            </form><br>
+                <a class="nav-link active" href="/signup">¿No posee cuenta? Crear cuenta</a>
+                {{error}}
+
+            </form>
+     
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+{% endblock %}

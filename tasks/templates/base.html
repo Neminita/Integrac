@@ -39,12 +39,12 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link active" href="">Salir</a>
+            <a class="nav-link active" href="/logout">Salir</a>
           </li>
-          {% else %}
-          <li class="nav-item">
-           <a class="nav-link active" href="/signup">Registrarme</a>
-          </li>
+            {% else %}
+            <li class="nav-item">
+            <a class="nav-link active" href="/signup">Registrarme</a>
+            </li>
           {% endif %}
         </ul>
         <form class="d-flex" role="search">
