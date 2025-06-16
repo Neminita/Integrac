@@ -38,13 +38,53 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
+  </div>
   
   <!-- Productos -->
   <br><br><br><br>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Productos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </li>
+    </div>
+  </nav>
+  <br><br><br>
+
+
+
+  <div class="card-group">
+    <div class="card">
+      {% for product in products %}
+      <img src="{% static 'img/Taladro.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text"><small class="text-muted">{{ product.get_category_display }}</small></p>
+        <p class="card-text"><small class="text-muted">${{ product.price }}</small></p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
   
   
   
 </body>
 </html>
-   {% endblock %}
+{% endblock %}

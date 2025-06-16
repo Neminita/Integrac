@@ -4,7 +4,10 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from .forms import TaskForm, ProductForm
+from .forms import TaskForm
+from django.shortcuts import render
+from .models import Product
+from django.views.generic import ListView, DetailView
 
 def signup(request): #FORMULARIO CREACIÓN DE CUENTA
 
@@ -32,7 +35,10 @@ def signup(request): #FORMULARIO CREACIÓN DE CUENTA
 
 
 def home(request):
-    return render(request, 'home.html',)
+    context = {
+        'products' : Product.objects.all()
+    }
+    return render(request, 'home.html', context)
 
 def base(request):
     return render(request, 'base.html',)
@@ -88,6 +94,12 @@ def signin(request):
 def carrito(request):
     return render(request, 'carrito.html',)
 
+
+def product_list(request):
+    context = {
+        'products' : Product.objects.all()
+    }
+    return render(request, 'product_list.html', context)
 
 def products(request):
     return render(request, 'products.html',)
