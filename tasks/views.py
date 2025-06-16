@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from .forms import TaskForm
+from .forms import TaskForm, ProductForm
 
 def signup(request): #FORMULARIO CREACIÓN DE CUENTA
 
@@ -85,8 +85,9 @@ def signin(request):
             return redirect('home')
 
 
-def products(request):
-    return render(request, 'products.html',)
-
 def carrito(request):
     return render(request, 'carrito.html',)
+
+
+def products(request):
+    return render(request, 'products.html',)
