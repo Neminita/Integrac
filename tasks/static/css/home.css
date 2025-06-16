@@ -60,3 +60,17 @@ h2{
     margin: 0%;
     width: 300%;
 }
+
+.container-fluid{
+    align-content: center;
+    width: 30%;
+
+}
+
+.card-img-top{
+
+    width: 3px;
+    margin: 5px;
+    max-height: 10px
+
+}
