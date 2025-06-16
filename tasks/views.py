@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
+from .forms import TaskForm
 
 def signup(request): #FORMULARIO CREACIÓN DE CUENTA
 
@@ -36,6 +37,31 @@ def home(request):
 def base(request):
     return render(request, 'base.html',)
 
+def tasks(request):
+    return render(request, 'tasks.html',)
+
+def create_task(request):
+
+    if request.method == 'GET':
+        return render(request, 'create_task.html',{
+            'form' : TaskForm
+        }) 
+    else:
+        try:
+            form = TaskForm(request.POST)
+            new_task = form.save(commit=False)
+            new_task.user = request.user
+            new_task.save()
+            return redirect('tasks')
+        except ValueError:
+            return render(request, 'create_task.html',{
+                'form' : TaskForm,
+                'error' : 'Datos inválidos'
+            }) 
+
+
+
+
 def signout(request):
     logout(request)
     return redirect('home')
@@ -58,3 +84,9 @@ def signin(request):
             login(request, user)
             return redirect('home')
 
+
+def products(request):
+    return render(request, 'products.html',)
+
+def carrito(request):
+    return render(request, 'carrito.html',)
