@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
+from django.views.generic import ListView, DetailView
 from django.db import IntegrityError
 from .forms import TaskForm
 from django.shortcuts import render
@@ -66,7 +67,13 @@ def create_task(request):
             }) 
 
 
+class HomeView(ListView):
+    model = Product
+    template_name = 'home.html'
 
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'home.html'
 
 def signout(request):
     logout(request)

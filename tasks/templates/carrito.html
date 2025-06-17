@@ -1,4 +1,67 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/carrito.css' %}">
+</head>
+<body>
+    <div class="card-group">
+        <div class="content">
+        <main class="cart">
+            <h2>Tu Carrito</h2>
+            <br>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="{% static 'img/Taladro.jpg' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                    </div>
+                </div>
+            </div>        
+        </main>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <br><br><br><br>
+                <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre destinatario</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Juanita Perez Rodriguez">
+                </div>
+                <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Dirección</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="1343 Calle Santa María">
+                </div>                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pagar compra
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Cobro por llegada</a></li>
+                        <li><a class="dropdown-item" href="#">Mercado Pago</a></li>
+                        <li><a class="dropdown-item" href="#">Paypal</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">???</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
 {% endblock %}
